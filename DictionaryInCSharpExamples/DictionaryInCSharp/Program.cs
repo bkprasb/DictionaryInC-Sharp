@@ -51,20 +51,28 @@ namespace DictionaryInCSharp
         // now we are trying to load data into dictionary fro file.
         public IPAddresses(string txtFile)// It calls a default constructor of a base class.
         {
-            string line;
-            string[] words;
-            StreamReader inFile;
-            inFile = File.OpenText(txtFile);
-            while (inFile.Peek() != -1)
-            {
-                line = inFile.ReadLine();
+            //string line;
+            //string[] words;
+            //StreamReader inFile;
+            //inFile = File.OpenText(txtFile);
+            //while (inFile.Peek() != -1)
+            //{
+            //    line = inFile.ReadLine();
 
-                words = line.Split(',');
-                this.InnerHashtable.Add(words[0], words[1]);
+            //    words = line.Split(',');
+            //    this.InnerHashtable.Add(words[0], words[1]);
+            //    Console.WriteLine();
             
-            }
+            //}
 
-            inFile.Close();
+            //inFile.Close();
+
+            string[] lines = File.ReadAllLines(txtFile);
+
+             lines.Select(l => l.Split('=')).ToDictionary(a => a[0], a => a[1]);
+
+
+
 
 
 
