@@ -22,7 +22,7 @@ namespace DictionaryInCSharp
 
             Console.WriteLine("There are " + myIPs.Count + " addresses in the system");
             Console.WriteLine("Gokul's Ip Address is :" + myIPs.Item("Gokul"));
-           // myIPs.Clear();
+           myIPs.Clear();
 
             Console.WriteLine("There are " +myIPs.Count + " number of ips in the system");
         
