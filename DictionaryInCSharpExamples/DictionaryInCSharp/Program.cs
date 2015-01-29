@@ -32,11 +32,12 @@ namespace DictionaryInCSharp
     public class IPAddresses : DictionaryBase
     {
         // now we are trying to load data into dictionary fro file.
-        public IPAddresses(string txtFile)// It calls a default constructor of a base class.
+        public IPAddresses()// It calls a default constructor of a base class.
         {
-            string line;
-            string[] words;
-            StreamReader inFile;
+            //string line;
+            //string[] words;
+            //StreamReader inFile;
+
 
         }
         public void Add(string name, string ip)//This method is used to add key value pair in a Hash table.
