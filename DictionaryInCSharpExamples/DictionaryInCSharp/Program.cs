@@ -27,6 +27,21 @@ namespace DictionaryInCSharp
             //Console.WriteLine("There are " +myIPs.Count + " number of ips in the system");
 
             //Now let us read dictionary data stored in a file.
+
+            for (int i = 0; i < 4; i++)
+            {
+                Console.WriteLine();
+
+                IPAddresses myIPs = new IPAddresses("C:\\GIT\\Projects\\DictionaryInC#\\DictionaryInC-Sharp\\DictionaryInCSharpExamples\\DictionaryInCSharp\\ips.txt");
+
+                Console.WriteLine("There are {0} IP addresses in the system" , myIPs.Count);
+
+                Console.WriteLine("Punam's IP address is {0}",myIPs.Item("Punam"));
+
+                Console.WriteLine("Gokul's IP address is {0}", myIPs.Item("Gokul"));
+
+
+            }
         
         }
     }
