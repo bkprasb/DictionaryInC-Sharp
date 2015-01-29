@@ -13,18 +13,20 @@ namespace DictionaryInCSharp
     {
         static void Main(string[] args)
         {
-            IPAddresses myIPs = new IPAddresses();
+           // IPAddresses myIPs = new IPAddresses();
 
-            myIPs.Add("Punam", "120.168.45.23");
-            myIPs.Add("Prabhat", "120.168.45.28");
-            myIPs.Add("Kiran", "120.168.45.26");
-            myIPs.Add("Gokul", "120.168.45.24");
+            //myIPs.Add("Punam", "120.168.45.23");
+            //myIPs.Add("Prabhat", "120.168.45.28");
+            //myIPs.Add("Kiran", "120.168.45.26");
+            //myIPs.Add("Gokul", "120.168.45.24");
 
-            Console.WriteLine("There are " + myIPs.Count + " addresses in the system");
-            Console.WriteLine("Gokul's Ip Address is :" + myIPs.Item("Gokul"));
-             myIPs.Clear();
+            //Console.WriteLine("There are " + myIPs.Count + " addresses in the system");
+            //Console.WriteLine("Gokul's Ip Address is :" + myIPs.Item("Gokul"));
+            // myIPs.Clear();
 
-            Console.WriteLine("There are " +myIPs.Count + " number of ips in the system");
+            //Console.WriteLine("There are " +myIPs.Count + " number of ips in the system");
+
+            //Now let us read dictionary data stored in a file.
         
         }
     }
@@ -32,11 +34,23 @@ namespace DictionaryInCSharp
     public class IPAddresses : DictionaryBase
     {
         // now we are trying to load data into dictionary fro file.
-        public IPAddresses()// It calls a default constructor of a base class.
+        public IPAddresses(string txtFile)// It calls a default constructor of a base class.
         {
-            //string line;
-            //string[] words;
-            //StreamReader inFile;
+            string line;
+            string[] words;
+            StreamReader inFile;
+            inFile = File.OpenText(txtFile);
+            while (inFile.Peek() != -1)
+            {
+                line = inFile.ReadLine();
+
+                words = line.Split(',');
+                this.InnerHashtable.Add(words[0], words[1]);
+            
+            }
+
+            inFile.Close();
+
 
 
         }
