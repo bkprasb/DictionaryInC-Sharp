@@ -28,8 +28,8 @@ namespace DictionaryInCSharp
 
             //Now let us read dictionary data stored in a file.
 
-            for (int i = 0; i < 4; i++)
-            {
+            //for (int i = 0; i < 4; i++)
+            //{
                 Console.WriteLine();
 
                 IPAddresses myIPs = new IPAddresses("C:\\GIT\\Projects\\DictionaryInC#\\DictionaryInC-Sharp\\DictionaryInCSharpExamples\\DictionaryInCSharp\\ips.txt");
@@ -41,7 +41,7 @@ namespace DictionaryInCSharp
                 Console.WriteLine("Gokul's IP address is {0}", myIPs.Item("Gokul"));
 
 
-            }
+            //}
         
         }
     }
@@ -66,8 +66,8 @@ namespace DictionaryInCSharp
             //}
 
             //inFile.Close();
-
-            string[] lines = File.ReadAllLines(txtFile);
+            string[] lines = new string[3];
+                lines = File.ReadAllLines(txtFile);
 
              lines.Select(l => l.Split('=')).ToDictionary(a => a[0], a => a[1]);
 
